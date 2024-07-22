@@ -1,0 +1,28 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class LocateByLinkTextExample {
+    public static void main(String[] args) {
+        // Set the path to the chromedriver executable
+        System.setProperty("webdriver.chrome.driver", "path_to_chromedriver");
+
+        // Initialize ChromeDriver
+        WebDriver driver = new ChromeDriver();
+
+        // Navigate to the test page URL
+        driver.get("https://www.securian.com/insights-tools/retirement-calculator.html");
+
+        // Locate an element using link text
+        WebElement linkElement = driver.findElement(By.linkText("javascript:void(0);");
+
+        // Perform actions with the located element
+        linkElement.click(); // Click on the link
+
+        // Optionally, perform additional actions on the new page
+
+        // Close the browser
+        driver.quit();
+    }
+}

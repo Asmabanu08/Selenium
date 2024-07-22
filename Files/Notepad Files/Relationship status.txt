@@ -1,0 +1,39 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class SelectRelationshipStatusExample{
+    public static void main(String[] args) {
+        // Set the path of the ChromeDriver executable
+        System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
+
+        // Create a new instance of the Chrome driver
+        WebDriver driver = new ChromeDriver();
+
+        // Navigate to the desired web page
+        driver.get("https://www.securian.com/insights-tools/retirement-calculator.html");
+
+        // Locate the radio button by its ID (or another suitable locator)
+        WebElement radioButton = driver.findElement(By.id("yes-social-benefits"));
+
+        // Click the radio button to select it
+        radioButton.click();
+
+        // Locate the radio button by its ID (or another suitable locator)
+        WebElement radioButton = driver.findElement(By.id("married"));
+
+        // Click the radio button to select it
+        radioButton.click();
+
+        // Verify if the radio button is selected
+        if (radioButton.isSelected()) {
+            System.out.println("Radio button is selected");
+        } else {
+            System.out.println("Radio button is not selected");
+        }
+
+        // Close the browser
+        driver.quit();
+    }
+}

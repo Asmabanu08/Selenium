@@ -1,0 +1,37 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class Pre-retirementinvestmentExample {
+    public static void main(String[] args) {
+        // Set up WebDriver
+        WebDriverManager.chromedriver().setup();
+        WebDriver driver = new ChromeDriver();
+
+        try {
+            // Navigate to a webpage
+            driver.get("https://www.securian.com/insights-tools/retirement-calculator.html");
+           // Locate an element using link text
+            WebElement linkElement = driver.findElement(By.linkText("javascript:void(0);");
+
+          // Perform actions with the located element
+            linkElement.click(); // Click on the link
+
+          // Locate the text input field
+            WebElement typefeild = driver.findElement(By.id("pre-retirement-roi"));
+
+          // Send keys to the input field
+            typefeild.sendKeys("8");
+
+            Thread.sleep(2000);
+
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            // Close the browser
+            driver.quit();
+        }
+    }
+}

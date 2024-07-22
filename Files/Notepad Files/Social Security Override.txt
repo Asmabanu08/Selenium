@@ -1,0 +1,32 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class SocialSecurityOverrideExample {
+    public static void main(String[] args) {
+        // Set up WebDriver
+        WebDriverManager.chromedriver().setup();
+        WebDriver driver = new ChromeDriver();
+
+        try {
+            // Navigate to a webpage
+            driver.get("https://www.securian.com/insights-tools/retirement-calculator.html");
+
+            // Locate the text input field
+            WebElement typefeild = driver.findElement(By.id("social-security-override"));
+
+            // Send keys to the input field
+           typefeild.sendKeys("4000");
+
+            Thread.sleep(2000);
+
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            // Close the browser
+            driver.quit();
+        }
+    }
+}
